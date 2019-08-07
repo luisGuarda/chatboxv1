@@ -3,8 +3,29 @@ body {
     background: #E9ECE9;
 }
 
+.divtextcli {
+    display: none;
+}
+
 .comments-card {
     width: 35%;
+}
+
+.tamcard {
+    max-width: 21rem !important;
+    min-width: 21rem !important;
+}
+
+.cabeceracard {
+    background: #0B3E69;
+}
+
+.titulo {
+    color: white;
+}
+
+.cargando {
+    display: none;
 }
 
 .comments-main {
@@ -14,19 +35,6 @@ body {
     flex-grow: 1;
     min-height: 320px;
     height: 320px;
-    min-width: 20%;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.8em;
-    margin-right: 0px;
-    margin-bottom: 0.5em;
-    margin-left: 0px;
-    line-height: 19px;
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
 }
 
 .comment time,
@@ -43,7 +51,8 @@ body {
 
 .comments .comment_sender {
     padding: 5px 10px;
-    background: #0CB9B9;
+    margin-left: 19px;
+    background: rgb(38, 192, 192);
 }
 
 .comments .comment_receiver {
