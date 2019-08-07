@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 
     var idrandom = create_UUID();
-    alert("numero random: " + idrandom);
+
 
     $("#ocultar").click(function() {
 
