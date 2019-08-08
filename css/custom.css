@@ -28,7 +28,7 @@ body {
     margin-right: 26px !important;
     z-index: 1000;
     position: fixed !important;
-    background-color: #0B3E69 !important;
+    background-color: #D06B5F !important;
 }
 
 .botonsalir {
@@ -95,10 +95,7 @@ body {
     border-color: #147DA2 !important;
 }
 
-.btnenviar {
-    background: #147DA2 !important;
-    border-color: #147DA2 !important;
-}
+.btnenviar {}
 
 .comments-main {
     background: #FFF;
