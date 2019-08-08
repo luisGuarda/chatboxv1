@@ -85,7 +85,7 @@ $(document).ready(function() {
                 dataType: "json",
                 data: '{"clientId":"' + idrandom + '","mensaje":"' + mensajellenar + '","plataforma":"web"}',
                 success: function(data) {
-
+                    console.log("codigo aleatorio: " + idrandom);
                     var respuestaCA = data.text || '';
                     var respuestaCATitulo = data.tituloOptions || '';
                     var respuestaCAOpcion = data.options || [];
@@ -164,7 +164,7 @@ $(document).ready(function() {
             data: '{"clientId":"' + idrandom + '","mensaje":"hola","plataforma":"web"}',
             success: function(data) {
 
-
+                console.log("codigo aleatorio: " + idrandom);
                 var respuestaCA = data.text || '';
                 var respuestaCATitulo = data.tituloOptions || '';
                 var respuestaCAOpcion = data.options || [];
@@ -231,7 +231,7 @@ $(document).ready(function() {
             data: '{"clientId":"' + idrandom + '","mensaje":"' + e + '","plataforma":"web"}',
             success: function(data) {
 
-
+                console.log("codigo aleatorio: " + idrandom);
                 var respuestaCA = data.text || '';
                 var respuestaCATitulo = data.tituloOptions || '';
                 var respuestaCAOpcion = data.options || [];

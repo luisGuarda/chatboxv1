@@ -8,76 +8,82 @@
 </head>
 
 <body>
-    <div class="container">
-        <input class="btn btn-danger" type="submit" id="mostrar" value="Chat Caja Arequipa" />
-        <div class="row divtextcli" id="chat">
-            <div class="card comments-card mb-3 tamcard">
-                <div class="card-header cabeceracard">
-                    <div class="row">
-                        <div class="col-sm-10">
-                            <h5 class="titulo">Caja Arequipa</h5>
-                        </div>
+    <div>
+        <div class="container">
+            <input class="btn btn-info mostrar" src="./img/sofia.png" type="image" id="mostrar" value="chat" />
 
-                        <div class="col-sm-2">
-                            <input class="btn btn-danger btn-sm" type="submit" id="ocultar" value="x" />
+        </div>
+        <div class="divchat">
+            <div class="row divtextcli" id="chat">
+                <div class="card comments-card tamcard">
+                    <div class="card-header cabeceracard">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h6 class="titulo">Caja Arequipa</h6>
+                                    </div>
+                                    <div class="col-2">
+                                        <input class="btn btn-danger botonsalir" type="submit" id="ocultar" value="x" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body comments-main">
+                        <ul class="p-0">
+                            <div id="respuestasbot">
+                            </div>
+                            <div class="cargando" id="cargando">
+                                <span class="spinner-border spinner-border-sm text-info" role="status" aria-hidden="true"></span> Cargando...
+                            </div>
+                            <div id="scrollfocus"></div>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-9">
+                                <input class="form-control" id="mensajeCLI" placeholder="Escriba aquí..." autocomplete="off" />
+                            </div>
+                            <div>
+                                <input class="btn btn-success btnenviar" type="submit" name="Ejecutar" id="ejecutar" value="Enviar" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-body comments-main">
-                    <ul class="p-0">
-                        <div id="respuestasbot">
-                        </div>
-                        <div class="cargando" id="cargando">
-                            <span class="spinner-border spinner-border-sm text-info" role="status" aria-hidden="true"></span> Cargando...
-                        </div>
-                        <div id="scrollfocus"></div>
-                    </ul>
+            </div>
+            <div id="template" class="d-none">
+                <div class='row comments mb-2'>
+                    <div class='col-md-2 offset-md-2 col-sm-2 offset-sm-2 col-3 offset-1 text-center user-img'>
+                    </div>
+                    <div class='col-md-7 col-sm-7 col-8 comment_receiver rounded mb-2 divrespuestacli'>
+                        <p class='mb-0 text-blue msgenvio'>[textoCLI]</p>
+
+                        <small>&nbsp;<time class='text-blue ml-2 horaenvio'>[hora]</time></small>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col-9">
-                            <input class="form-control" id="mensajeCLI" placeholder="Escriba aquí..." autocomplete="off" />
-                        </div>
-                        <div>
-                            <input class="btn btn-success" type="submit" name="Ejecutar" id="ejecutar" value="Enviar" />
-                        </div>
+                <div class='row comments mb-2 comentariobot'>
+
+                    <div class='col-md-9 col-sm-9 col-9 comment_sender rounded'>
+                        <!--Onclick Respuesta Caja-->
+                        <p class='mb-0 respuestaCA'>[respuestaCA]</p>
+
+
+                        <!--Seleccion de opciones caja -->
+                        <p class='mb-1 respuestaCATitulo'>[respuestaCATitulo]</p>
+                        <p class='mb-1 hidden textoseleccione'></p>
+                        <!--Botones con opciones-->
+                        <div class="btn-section"></div>
+                        <!--final del div-->
+                        <small>&nbsp;&nbsp;&nbsp;<time class='ml-2 horabot'>[hora]</time></small>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="template" class="d-none">
-            <div class='row comments mb-2'>
-                <div class='col-md-2 offset-md-2 col-sm-2 offset-sm-2 col-3 offset-1 text-center user-img'>
-                </div>
-                <div class='col-md-7 col-sm-7 col-8 comment_receiver rounded mb-2 divrespuestacli'>
-                    <time class='text-blue ml-2 horaenvio'>[hora]</time>
-                    <like></like>
-                    <p class='mb-0 text-blue msgenvio'>[textoCLI]</p>
-                </div>
+            <!--Botones con opciones-->
+            <div id="template-button" class="d-none">
+                <button class='btn btn-success btn-sm btnopciones' type='button'>[item.title]</button>
+                <br/><br/>
             </div>
-            <div class='row comments mb-2 comentariobot'>
-                <div class='col-md-2 col-sm-2 col-3 text-center user-img'>
-                    <img id='profile-photo' src='./img/profile.jpg' class='rounded-circle' />
-                </div>
-                <div class='col-md-9 col-sm-9 col-9 comment_sender rounded mb-2'>
-                    <time class='text-white ml-2 horabot'>[hora]</time>
-                    <like></like>
-                    <!--Onclick Respuesta Caja-->
-                    <p class='mb-0 text-white respuestaCA'>[respuestaCA]</p>
-                    <!--Seleccion de opciones caja -->
-                    <p class='mb-0 text-white respuestaCATitulo'>[respuestaCATitulo]</p>
-                    <p class='mb-0 text-white hidden textoseleccione'></p><br>
-                    <!--Botones con opciones-->
-                    <div class="btn-section"></div>
-                    <!--final del div-->
-                    <like></like>
-                </div>
-            </div>
-        </div>
-        <!--Botones con opciones-->
-        <div id="template-button" class="d-none">
-            <button class='btn btn-success btn-sm' type='button'>[item.title]</button>
-            <br/><br/>
         </div>
         <script src="./js/jquery-3.3.1.min.js"></script>
         <script src="./js/post.js"></script>
