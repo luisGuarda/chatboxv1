@@ -3,6 +3,10 @@ body {
     background: #E9ECE9;
 }
 
+.inputcli:focus {
+    outline: 0px;
+}
+
 .divchat {
     font-size: 14px !important;
     outline: none !important;
@@ -53,19 +57,19 @@ body {
 
 .horabot {
     padding-left: 70%;
-    color: #5f6364;
+    color: black;
 }
 
 .respuestaCA {
-    color: #5f6364;
+    color: black;
 }
 
 .respuestaCATitulo {
-    color: #5f6364;
+    color: black;
 }
 
 .textoseleccione {
-    color: #5f6364;
+    color: black;
 }
 
 .comments-card {
@@ -95,7 +99,10 @@ body {
     border-color: #147DA2 !important;
 }
 
-.btnenviar {}
+.btnenviar {
+    background: #147DA2 !important;
+    border-color: #147DA2 !important;
+}
 
 .comments-main {
     background: #FFF;
@@ -121,12 +128,14 @@ body {
 .comments .comment_sender {
     padding: 5px 10px;
     margin-left: 19px;
-    background: #D1EDF8;
+    background: #F1F1EE;
 }
 
 .comments .comment_receiver {
     padding: 5px 10px;
-    background: #F1F1EE;
+    background: #35CDCE;
+    color: white;
+    margin: 4%;
 }
 
 .comments .comment:hover time {

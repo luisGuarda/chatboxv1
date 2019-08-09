@@ -33,6 +33,13 @@
                     <div class="card-body comments-main">
                         <ul class="p-0">
                             <div id="respuestasbot">
+                                <div class='row comments mb-2 comentariobot' id="template2">
+                                    <div class='col-md-9 col-sm-9 col-9 comment_sender rounded'>
+                                        <p class='mb-0 text-blue respuestaCA'>Hola, soy el Asistente Virtual de Caja Arequipa, estoy aquí para ayudar a resolver tus dudas más frecuentes.</p>
+
+                                        <small>&nbsp;<time class="text-blue ml-2 horabot" id="horabienvenida"></time></small>
+                                    </div>
+                                </div>
                             </div>
                             <div class="cargando" id="cargando">
                                 <span class="spinner-border spinner-border-sm text-info" role="status" aria-hidden="true"></span> Cargando...
@@ -43,7 +50,7 @@
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-9">
-                                <input class="form-control" id="mensajeCLI" placeholder="Escriba aquí..." autocomplete="off" />
+                                <input class="form-control inputcli" id="mensajeCLI" placeholder="Escriba aquí..." autocomplete="off" />
                             </div>
                             <div>
                                 <input class="btn btn-success btnenviar" type="submit" name="Ejecutar" id="ejecutar" value="Enviar" />
