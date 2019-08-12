@@ -18,8 +18,7 @@ $(document).ready(function() {
         return txtData;
     }
 
-    var texturl = "Ofrecemos créditos para Personas o Microempresarios. Puedes revisarlos en la web: https://www.cajaarequipa.pe/creditos/";
-    console.log(convertText(texturl))
+
 
     //////////////////////
 
@@ -99,7 +98,7 @@ $(document).ready(function() {
             elMsgTemplatecli.find('.comentariobot').addClass('d-none');
             $("#respuestasbot").append(elMsgTemplatecli);
 
-            ////////////// FALTA PASAR LOS VALORES (INSTALAR EL "Web Server for Chrome" DEL Chrome web store)
+
             document.getElementById("cargando").style.display = 'block';
             var posicion = $("#scrollfocus").offset().top;
             $(".card-body.comments-main").animate({
@@ -112,7 +111,7 @@ $(document).ready(function() {
                 dataType: "json",
                 data: '{"clientId":"' + idrandom + '","mensaje":"' + mensajellenar + '","plataforma":"web"}',
                 success: function(data) {
-                    console.log("codigo aleatorio: " + idrandom);
+
                     var respuestaCA = data.text || '';
                     var respuestaCATitulo = data.tituloOptions || '';
                     var respuestaCAOpcion = data.options || [];
@@ -181,7 +180,7 @@ $(document).ready(function() {
 
         $('#horabienvenida').text(hora);
 
-        console.log(hora);
+
 
     });
 
@@ -204,7 +203,7 @@ $(document).ready(function() {
             data: '{"clientId":"' + idrandom + '","mensaje":"' + e + '","plataforma":"web"}',
             success: function(data) {
 
-                console.log("codigo aleatorio: " + idrandom);
+
                 var respuestaCA = data.text || '';
                 var respuestaCATitulo = data.tituloOptions || '';
                 var respuestaCAOpcion = data.options || [];
