@@ -3,8 +3,9 @@ body {
     background: #E9ECE9;
 }
 
-.inputcli:focus {
-    outline: 0px;
+.horapegada {
+    position: relative;
+    top: -7px;
 }
 
 .divchat {
@@ -128,6 +129,8 @@ body {
 .comments .comment_sender {
     padding: 5px 10px;
     margin-left: 19px;
+    margin-top: -6px;
+    margin-bottom: -3px;
     background: #F1F1EE;
 }
 
