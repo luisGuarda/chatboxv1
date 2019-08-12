@@ -1,4 +1,31 @@
 $(document).ready(function() {
+
+    /////////////////URLS/////////////////
+
+    function convertText(txtData) {
+        var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+        txtData = txtData.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+
+        var urlRegex = /(\b(\swww).[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+        txtData = txtData.replace(urlRegex, ' <a href="$1" target="_blank">$1</a>');
+
+        var urlRegex = /(>\swww)/ig;
+        txtData = txtData.replace(urlRegex, '>www');
+
+        var urlRegex = /(\"\swww)/ig;
+        txtData = txtData.replace(urlRegex, '"http://www');
+
+        return txtData;
+    }
+
+    var texturl = "Ofrecemos créditos para Personas o Microempresarios. Puedes revisarlos en la web: https://www.cajaarequipa.pe/creditos/";
+    console.log(convertText(texturl))
+
+    //////////////////////
+
+
+
+
     function create_UUID() {
         var dt = new Date().getTime();
         var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -98,8 +125,8 @@ $(document).ready(function() {
                     elMsgTemplate.find('.horabot').html(horaRecibido);
 
                     if (respuestaCA !== undefined && respuestaCATitulo !== undefined && respuestaCAOpcion !== undefined) {
-                        elMsgTemplate.find('.respuestaCA').html(respuestaCA);
-                        elMsgTemplate.find('.respuestaCATitulo').html(respuestaCATitulo);
+                        elMsgTemplate.find('.respuestaCA').html(convertText(respuestaCA));
+                        elMsgTemplate.find('.respuestaCATitulo').html(convertText(respuestaCATitulo));
 
                         if (respuestaCAOpcion.length > 0) {
                             elMsgTemplate.find('.textoseleccione').removeClass('d-none').html('Seleccione una de estas opciones');
@@ -109,10 +136,10 @@ $(document).ready(function() {
                         }
                     } else if (respuestaCA) {
                         elMsgTemplate.find('.respuestaCA').addClass('d-none');
-                        elMsgTemplate.find('.respuestaCATitulo').html(respuestaCA);
+                        elMsgTemplate.find('.respuestaCATitulo').html(convertText(respuestaCA));
                     } else {
                         elMsgTemplate.find('.respuestaCA').addClass('d-none');
-                        elMsgTemplate.find('.respuestaCATitulo').html(respuestaCATitulo);
+                        elMsgTemplate.find('.respuestaCATitulo').html(convertText(respuestaCATitulo));
                         $.each(respuestaCAOpcion, function(index, item) {
                             createButton(elMsgTemplate, item);
                         });
@@ -191,8 +218,8 @@ $(document).ready(function() {
                 elMsgTemplate.find('.horabot').html(horaRecibido);
 
                 if (respuestaCA !== undefined && respuestaCATitulo !== undefined && respuestaCAOpcion !== undefined) {
-                    elMsgTemplate.find('.respuestaCA').html(respuestaCA);
-                    elMsgTemplate.find('.respuestaCATitulo').html(respuestaCATitulo);
+                    elMsgTemplate.find('.respuestaCA').html(convertText(respuestaCA));
+                    elMsgTemplate.find('.respuestaCATitulo').html(convertText(respuestaCATitulo));
 
                     if (respuestaCAOpcion.length > 0) {
                         elMsgTemplate.find('.textoseleccione').removeClass('d-none').html('Seleccione una de estas opciones');
@@ -202,10 +229,10 @@ $(document).ready(function() {
                     }
                 } else if (respuestaCA) {
                     elMsgTemplate.find('.respuestaCA').addClass('d-none');
-                    elMsgTemplate.find('.respuestaCATitulo').html(respuestaCA);
+                    elMsgTemplate.find('.respuestaCATitulo').html(convertText(respuestaCA));
                 } else {
                     elMsgTemplate.find('.respuestaCA').addClass('d-none');
-                    elMsgTemplate.find('.respuestaCATitulo').html(respuestaCATitulo);
+                    elMsgTemplate.find('.respuestaCATitulo').html(convertText(respuestaCATitulo));
                     $.each(respuestaCAOpcion, function(index, item) {
                         createButton(elMsgTemplate, item);
                     });
